@@ -1,0 +1,32 @@
+body{
+	font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+	margin: 50px;
+	text-align: center;
+	padding: 10px;
+	background-image: url("img/intro-bg.jpg");
+	background: black;
+
+	}
+
+#img1{
+	padding: 10px;
+	padding-top: 70px;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-delay: 1s;		
+}
+
+#img2{
+	padding: 5px;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-delay: 3s;
+	-webkit-animation-iteration-count: infinite;
+		
+}
+
+@media screen and (max-width: 400px){
+	body {
+		background-color: white;
+	}
+}
