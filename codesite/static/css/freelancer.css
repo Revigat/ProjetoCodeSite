@@ -97,10 +97,10 @@ header img {
 
 header .intro-text .name {
     display: block;
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 2em;
-    font-weight: 700;
+    /*text-transform: uppercase;*/
+    font-family: Righteous;
+    font-size: 4em;
+    font-weight: 500;
 }
 
 header .intro-text .skills {
