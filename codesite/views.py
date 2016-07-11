@@ -13,11 +13,13 @@ def index(request):
 	p = Pessoa()
 	if request.method == "POST":
 		nome = request.POST['nome']
-		email = request.POST['email']
+		email = request.POST['contatoemail']
+		mensagem = request.POST['textomsg']
 		p.nome = nome
 		p.email = email
+		p.mensagem = mensagem
 		p.save()
-		return render_to_response('apresenta.html',{'nome' : nome , 'email' : email})
+		return render_to_response('apresenta.html',{'nome' : nome , 'contatoemail' : email, 'textomsg' : mensagem})
 
 	return render_to_response('index2.html')
 
