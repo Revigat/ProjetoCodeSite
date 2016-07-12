@@ -30,6 +30,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="static/css/csshake-slow.min.css">
+  <script src="https://cdn.ravenjs.com/3.2.1/raven.min.js"></script>
 
 </head>
 
@@ -166,7 +167,7 @@
 
             <div class="row control-group">
               <div class="form-group col-lg-12 controls">
-                <label for="inputEmail" class="col-lg-2 control-label">Seu Nome</label> 
+                <label for="inputEmail" class="col-lg-2 control-label error">Seu Nome</label> 
                 <div class="col-lg-10">
                   <input type="text" class="form-control" name="nome" id="name" required data-validation-required-message="Seu nome não pode ser Branco"> 
                   <p class="help-block text-danger"></p>
@@ -178,7 +179,7 @@
               <div class="form-group col-lg-12 controls">
                 <label for="inputEmail" class="col-lg-2 control-label">Seu Email</label> 
                 <div class="col-lg-10">
-                  <input type="email" class="form-control" name="contatoemail" id="email" required data-validation-required-message="Seu email não pode ser Branco">
+                  <input type="email" class="form-control error" name="contatoemail" id="email" required data-validation-required-message="Seu email não pode ser Branco">
                   <p class="help-block text-danger"></p> 
                 </div>
               </div>
@@ -188,7 +189,7 @@
               <div class="form-group col-lg-12 controls">
                 <label class="col-lg-2 control-label">Mensagem</label>
                 <div class="col-lg-10">
-                  <textarea class="form-control" name="textomsg" rows="7" id="textoarea" required data-validation-required-message="Digite"></textarea>
+                  <textarea class="form-control error" name="textomsg" rows="7" id="textoarea" required data-validation-required-message="Digite"></textarea>
                   <span class="col-lg-12 text-center">* É importante detalhar ao máximo sua necessidade.</span>
                 </div>
               </div>
@@ -201,7 +202,7 @@
             <div class="form-group">
               <div class="alert alert-dismissible alert-sucess">
                 <div class="col-lg-10 col-lg-offset-2">
-                  <button type="submmit" class="btn btn-primary">Enviar</button> 
+                  <button type="submmit" class="btn btn-primary" data-loading-text="Loading...">Enviar</button> 
               </div>
               </div>
             </div>
