@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render_to_response
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.core.urlresolvers import reverse
 from django.views.decorators.csrf import csrf_exempt
 from codesite.models import Pessoa
 
@@ -19,9 +20,10 @@ def index(request):
 		p.email = email
 		p.mensagem = mensagem
 		p.save()
-		return render_to_response('apresenta.html',{'nome' : nome , 'contatoemail' : email, 'textomsg' : mensagem})
+		return HttpResponseRedirect('index')
+		#return render_to_response('index.html')
 
-	return render_to_response('index2.html')
+	return render_to_response('index.html')
 
 def index2(request):
 
