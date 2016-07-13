@@ -84,7 +84,7 @@
           <img class="img-responsive" src="static/img/logo.png">
           <div class="intro-text">
             <span class="name">code</span>
-            <span class="skills"> Desenvolvimento WEB</span>
+            <span class="skills">Inteligência WEB</span>
             <ul class="list-inline">
               <li class="animated infinite bounceInDown">
                 <a href="https://www.facebook.com/codeoficial/" class="btn-social btn-outline shake-opacity"><i class="fa fa-fw fa-facebook"></i></a>
@@ -162,14 +162,14 @@
         <h2>Contato</h2>  
       </div>
         <div class="col-lg-8 col-lg-offset-2">
-          <form method="POST" action="." class="form-horizontal">
+          <form method="POST" action="." class="form-horizontal" name="dados" onsubmit="return enviardados();">
             <legend class="text-center">Agora que você já nos conhece, conte um pouco mais sobre o seu Projeto</legend> 
 
             <div class="row control-group">
               <div class="form-group col-lg-12 controls">
                 <label for="inputEmail" class="col-lg-2 control-label error">Seu Nome</label> 
                 <div class="col-lg-10">
-                  <input type="text" class="form-control" name="nome" id="name" required data-validation-required-message="Seu nome não pode ser Branco"> 
+                  <input type="text" class="form-control" name="nome" id="name"> 
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
@@ -179,7 +179,7 @@
               <div class="form-group col-lg-12 controls">
                 <label for="inputEmail" class="col-lg-2 control-label">Seu Email</label> 
                 <div class="col-lg-10">
-                  <input type="email" class="form-control error" name="contatoemail" id="email" required data-validation-required-message="Seu email não pode ser Branco">
+                  <input type="email" class="form-control error" name="contatoemail" id="email"> 
                   <p class="help-block text-danger"></p> 
                 </div>
               </div>
@@ -189,7 +189,7 @@
               <div class="form-group col-lg-12 controls">
                 <label class="col-lg-2 control-label">Mensagem</label>
                 <div class="col-lg-10">
-                  <textarea class="form-control error" name="textomsg" rows="7" id="textoarea" required data-validation-required-message="Digite"></textarea>
+                  <textarea class="form-control error" name="textomsg" rows="7" id="textoarea"></textarea>
                   <span class="col-lg-12 text-center">* É importante detalhar ao máximo sua necessidade.</span>
                 </div>
               </div>
@@ -197,13 +197,13 @@
             <div id="success"></div>
             <div class="alert alert-dismissible alert-success">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
-              <strong>Tudo certo? Click no botão enviar</strong> e aguarde nosso contato, <a href="#" class="alert-link"> vamos fazer coisas incríveis juntos.</a>
+              <strong>Tudo certo? Click no botão enviar</strong> e aguarde nosso contato, <a href="#" class="alert-link shake-little shake-constant shake-constant--hover"> vamos fazer coisas incríveis juntos.</a>
             </div>
             <div class="form-group">
               <div class="alert alert-dismissible alert-sucess">
                 <div class="col-lg-10 col-lg-offset-2">
-                  <button type="submmit" class="btn btn-primary" data-loading-text="Loading...">Enviar</button> 
-              </div>
+                  <button type="submmit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Enviar</button> 
+                </div>
               </div>
             </div>
           </form>
@@ -211,14 +211,12 @@
       </div>  
     </div>
   </section>
-
-
   <!-- Footer -->
     <footer class="text-center">
         <div class="footer-above">
             <div class="container">
                 <div class="row">
-                    <div class="footer-col col-md-4 itemprop="location" itemscope itemtype="http://schema.org/Place"">
+                    <div class="footer-col col-md-4" itemprop="location" itemscope itemtype="http://schema.org/Place"">
                         <h3>Onde estamos</h3>
                         <p itemprop="name">Curitiba<br></p>
                     </div>
@@ -305,7 +303,8 @@
         </div>
     </div>
 
-
+    <!--Meu Script-->
+    <script src=static/js/myscript.js></script>
     <!-- jQuery-->
     <script src="static/js/jquery.js"></script>
 
@@ -332,7 +331,6 @@
 
       ga('create', 'UA-63850841-3', 'auto');
       ga('send', 'pageview');
-
     </script>
 </body>
 
