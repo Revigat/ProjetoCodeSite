@@ -129,6 +129,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+#configuração para enviar e-mail
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'Code inteligência WEB <revigatcode@gmail.com>'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'revigatcode@gmail.com'  
+EMAIL_HOST_PASSWORD = '@Pro502010'
+EMAIL_PORT = 587
 

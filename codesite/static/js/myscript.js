@@ -23,10 +23,4 @@ function enviardados(){
     }
 
   return true;
-
-  if (document.dados == true || document.button == onclick())
-  {
-    alert('ok')
-
-  }
 }

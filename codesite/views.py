@@ -4,6 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views.decorators.csrf import csrf_exempt
 from codesite.models import Pessoa
+from django.core.mail import send_mail
 
 
 # Create your views here.
@@ -20,14 +21,24 @@ def index(request):
 		p.email = email
 		p.mensagem = mensagem
 		p.save()
+
+		send_mail('Subject here','Nome: %s \nE-mail: %s \nMensagem: %s '%(p.nome,p.email,p.mensagem),'revigatcode@gmail.com',['revigat@gmail.com,Victor.vh56@gmail.com'])
+
 		return HttpResponseRedirect('index')
+
 		#return render_to_response('index.html')
 
 	return render_to_response('index.html')
 
-def index2(request):
+def apresenta(request):
 
-	return render_to_response('apresenta.html')
+
+	usuarios = p.objects.all()
+
+	return render_to_response('apresenta.html',{'usuario': usuarios})
+
+	#return HttpResponse('ok')
+
 
 def servicos(request):
 	return render_to_response('servicos.html')

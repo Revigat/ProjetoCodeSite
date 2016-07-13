@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-{% load staticfiles %}
 <html>
 <head>
 	<title></title>
 </head>
 <body>
 	<h1>{{nome}} é VIADOOOOOOOOOOOOOOOO</h1>
-	<li><a href="{% url 'codesite.views.index' %}">Home</a></li>
-	<h1>{{nome}}</h1>
-	<h1>{{contatoemail}}</h1> <!-- é o nome do campo renderizado-->
-	<h1>{{textomsg}}</h1>
+	{%for usuario in usuarios%}
+		<h1>{{usuario.nome}}</h1>
+		<h1>{{usuario.contatoemail}}</h1> <!-- é o nome do campo renderizado-->
+		<h1>{{usuario.textomsg}}</h1>
+	{% endfor %}
 </body>
 </html>

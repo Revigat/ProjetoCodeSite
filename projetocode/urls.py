@@ -20,7 +20,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$','codesite.views.index'),
     url(r'^index','codesite.views.index'),
-    #url(r'^index/','codesite.views.index'),
+    #url(r'^apresenta/','codesite.views.apresenta'),
     url(r'^servicos/','codesite.views.servicos'),
     url(r'^cadastro/','codesite.views.cadastro'),
 ]
