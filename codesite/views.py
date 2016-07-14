@@ -22,7 +22,7 @@ def index(request):
 		p.mensagem = mensagem
 		p.save()
 
-		send_mail('Subject here','Nome: %s \nE-mail: %s \nMensagem: %s '%(p.nome,p.email,p.mensagem),'revigatcode@gmail.com',['revigat@gmail.com,Victor.vh56@gmail.com'])
+		send_mail('Mensagem de Cliente','Nome: %s \nE-mail: %s \nMensagem: %s '%(p.nome,p.email,p.mensagem),'revigatcode@gmail.com',['revigat@gmail.com,Victor.vh56@gmail.com'])
 
 		return HttpResponseRedirect('index')
 
