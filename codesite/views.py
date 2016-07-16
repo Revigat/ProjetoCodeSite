@@ -20,11 +20,12 @@ def index(request):
 	if request.method == "POST":
 		form = PessoaForm(request.POST)
 		if form.is_valid():
-			vNome = form.cleaned_data['nome']
+			vNome = form.cleaned_data['nome'] #é melhor acessar form.cleaned_data. Estes dados não serão somente válidos, mas estarão convertidos em tipos relevantes do Python
 			vEmail = form.cleaned_data['email']
 			vMensagem = form.cleaned_data['mensagem']
 			form.save()
 			send_mail('Mensagem de Cliente','Nome: %s \nE-mail: %s \nMensagem: %s '%(vNome,vEmail,vMensagem),'revigatcode@gmail.com',['revigat@gmail.com'])
+			send_mail('Code - Inteligência WEB','Agradecemos seu contato e interesse na code, dentro de 24h entraremos em contato.','revigatcode@gmail.com',['%s'%(vEmail)])
 
 			return HttpResponseRedirect('index.html')
 
