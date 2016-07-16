@@ -3,8 +3,10 @@ from .models import Pessoa
 
 
 class PessoaForm(forms.ModelForm):
-	 class Meta:
 
-	 	model = Pessoa
+	class Meta:
+		
+		model = Pessoa
 
-	 	fields = ('nome','email','mensagem',)
+		fields = ['nome','email','mensagem']
+

@@ -1,3 +1,5 @@
+# -*- coding: UTF-8 -*-
+from __future__ import unicode_literals
 from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
@@ -13,32 +15,25 @@ from .forms import PessoaForm
 
 @csrf_exempt
 def index(request):
-	p = Pessoa()
-	form = PessoaForm()
+
 	if request.method == "POST":
+
+		form = PessoaForm(request.POST)
+
 		if form.is_valid():
-			nome = request.POST['nome']
-			email = request.POST['contatoemail']
-			mensagem = request.POST['textomsg']
-			p.nome = nome
-			p.email = email
-			p.mensagem = mensagem
-			p.save()
+			vNome = form.cleaned_data['nome']
+			vEmail = form.cleaned_data['email']
+			vMensagem = form.cleaned_data['mensagem']
+			form.save()
+			send_mail('Mensagem de Cliente','Nome: %s \nE-mail: %s \nMensagem: %s '%(vNome,vEmail,vMensagem),'revigatcode@gmail.com',['revigat@gmail.com'])
 
-			send_mail('Mensagem de Cliente','Nome: %s \nE-mail: %s \nMensagem: %s '%(p.nome,p.email,p.mensagem),'revigatcode@gmail.com',['revigat@gmail.com,Victor.vh56@gmail.com'])
+			return HttpResponseRedirect('index')
 
-			return HttpResponseRedirect('/index/')
-
-		#return render_to_response('index.html')
-
-	return render_to_response('index.html', {'form' : form })
-
-@csrf_exempt
-def testeform(request):
-	form = PessoaForm()
-
-	return render_to_response('testeform.html', {'form' : form })
-
+			#debug valorForm = form.is_valid() 
+			#debug errosForm = form.errors.as_json() 
+	else:
+		form = PessoaForm()
+		return render_to_response('index.html', {'form' : form })
 
 def apresenta(request):
 

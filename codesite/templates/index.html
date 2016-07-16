@@ -167,9 +167,9 @@
 
             <div class="row control-group">
               <div class="form-group col-lg-12 controls">
-                <label for="inputEmail" class="col-lg-2 control-label error">Seu Nome</label> 
+                <label class="col-lg-2 control-label error">Seu Nome</label> 
                 <div class="col-lg-10">
-                  <input type="{{form.as_p.nome}}" class="form-control" name="nome" id="name"> 
+                  <input type="{{form.asp_p.nome}}" class="form-control" name="nome" id="name"> 
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
@@ -177,9 +177,9 @@
 
             <div class="row control-group">
               <div class="form-group col-lg-12 controls">
-                <label for="inputEmail" class="col-lg-2 control-label">Seu Email</label> 
+                <label for="id_email" class="col-lg-2 control-label">Seu Email</label> 
                 <div class="col-lg-10">
-                  <input type="{{form.as_p.email}}" class="form-control error" name="contatoemail" id="email"> 
+                  <input type="{{form.as_p.email}}" class="form-control error" name="email" id="email"> 
                   <p class="help-block text-danger"></p> 
                 </div>
               </div>
@@ -187,9 +187,10 @@
 
             <div class="row control-group">
               <div class="form-group col-lg-12 controls">
-                <label class="col-lg-2 control-label">Mensagem</label>
+                  {{form.mensagem.errors}}
+                <label for="id_mensagem" class="col-lg-2 control-label">Mensagem</label>
                 <div class="col-lg-10">
-                  <textarea type="{{form.as_p.mensagem}}" class="form-control error" name="textomsg" rows="7" id="textoarea"></textarea>
+                  <textarea type="{{form.as_p.mensagem}}" class="form-control error" name="mensagem" rows="7" id="textoarea"></textarea>
                   <span class="col-lg-12 text-center">* É importante detalhar ao máximo sua necessidade.</span>
                 </div>
               </div>
@@ -197,7 +198,7 @@
             <div id="success"></div>
             <div class="alert alert-dismissible alert-success">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
-              <strong>Tudo certo? Click no botão enviar</strong> e aguarde nosso contato, <a href="#" class="alert-link shake-little shake-constant shake-constant--hover"> vamos fazer coisas incríveis juntos.</a>
+              <strong>Tudo certo? Click no botão enviar</strong> e aguarde nosso contato, <a href="#" class="alert-link"> vamos fazer coisas incríveis juntos.</a>
             </div>
             <div class="form-group">
               <div class="alert alert-dismissible alert-sucess">
