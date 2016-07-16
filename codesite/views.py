@@ -15,11 +15,10 @@ from .forms import PessoaForm
 
 @csrf_exempt
 def index(request):
+	p = Pessoa()
 
 	if request.method == "POST":
-
 		form = PessoaForm(request.POST)
-
 		if form.is_valid():
 			vNome = form.cleaned_data['nome']
 			vEmail = form.cleaned_data['email']
@@ -27,13 +26,14 @@ def index(request):
 			form.save()
 			send_mail('Mensagem de Cliente','Nome: %s \nE-mail: %s \nMensagem: %s '%(vNome,vEmail,vMensagem),'revigatcode@gmail.com',['revigat@gmail.com'])
 
-			return HttpResponseRedirect('index')
+			return HttpResponseRedirect('index.html')
 
-			#debug valorForm = form.is_valid() 
-			#debug errosForm = form.errors.as_json() 
 	else:
+
 		form = PessoaForm()
-		return render_to_response('index.html', {'form' : form })
+
+	return render_to_response('index.html', {'form' : form })
+
 
 def apresenta(request):
 
