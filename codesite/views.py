@@ -25,7 +25,7 @@ def index(request):
 			vMensagem = form.cleaned_data['mensagem']
 			form.save()
 			send_mail('Mensagem de Cliente','Nome: %s \nE-mail: %s \nMensagem: %s '%(vNome,vEmail,vMensagem),'revigatcode@gmail.com',['revigat@gmail.com'])
-			send_mail('Code - Inteligência WEB','Agradecemos seu contato e interesse na code, dentro de 24h entraremos em contato.','revigatcode@gmail.com',['%s'%(vEmail)])
+			send_mail('Code - Inteligência WEB','Agradecemos seu interesse na Code, dentro de 24h entraremos em contato.','revigatcode@gmail.com',['%s'%(vEmail)])
 
 			return HttpResponseRedirect('index.html')
 
