@@ -5,6 +5,7 @@ from django.core.urlresolvers import reverse
 from django.views.decorators.csrf import csrf_exempt
 from codesite.models import Pessoa
 from django.core.mail import send_mail
+from .forms import PessoaForm
 
 
 # Create your views here.
@@ -13,22 +14,31 @@ from django.core.mail import send_mail
 @csrf_exempt
 def index(request):
 	p = Pessoa()
+	form = PessoaForm()
 	if request.method == "POST":
-		nome = request.POST['nome']
-		email = request.POST['contatoemail']
-		mensagem = request.POST['textomsg']
-		p.nome = nome
-		p.email = email
-		p.mensagem = mensagem
-		p.save()
+		if form.is_valid():
+			nome = request.POST['nome']
+			email = request.POST['contatoemail']
+			mensagem = request.POST['textomsg']
+			p.nome = nome
+			p.email = email
+			p.mensagem = mensagem
+			p.save()
 
-		send_mail('Mensagem de Cliente','Nome: %s \nE-mail: %s \nMensagem: %s '%(p.nome,p.email,p.mensagem),'revigatcode@gmail.com',['revigat@gmail.com,Victor.vh56@gmail.com'])
+			send_mail('Mensagem de Cliente','Nome: %s \nE-mail: %s \nMensagem: %s '%(p.nome,p.email,p.mensagem),'revigatcode@gmail.com',['revigat@gmail.com,Victor.vh56@gmail.com'])
 
-		return HttpResponseRedirect('index')
+			return HttpResponseRedirect('/index/')
 
 		#return render_to_response('index.html')
 
-	return render_to_response('index.html')
+	return render_to_response('index.html', {'form' : form })
+
+@csrf_exempt
+def testeform(request):
+	form = PessoaForm()
+
+	return render_to_response('testeform.html', {'form' : form })
+
 
 def apresenta(request):
 

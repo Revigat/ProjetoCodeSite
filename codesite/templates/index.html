@@ -169,7 +169,7 @@
               <div class="form-group col-lg-12 controls">
                 <label for="inputEmail" class="col-lg-2 control-label error">Seu Nome</label> 
                 <div class="col-lg-10">
-                  <input type="text" class="form-control" name="nome" id="name"> 
+                  <input type="{{form.as_p.nome}}" class="form-control" name="nome" id="name"> 
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
@@ -179,7 +179,7 @@
               <div class="form-group col-lg-12 controls">
                 <label for="inputEmail" class="col-lg-2 control-label">Seu Email</label> 
                 <div class="col-lg-10">
-                  <input type="email" class="form-control error" name="contatoemail" id="email"> 
+                  <input type="{{form.as_p.email}}" class="form-control error" name="contatoemail" id="email"> 
                   <p class="help-block text-danger"></p> 
                 </div>
               </div>
@@ -189,7 +189,7 @@
               <div class="form-group col-lg-12 controls">
                 <label class="col-lg-2 control-label">Mensagem</label>
                 <div class="col-lg-10">
-                  <textarea class="form-control error" name="textomsg" rows="7" id="textoarea"></textarea>
+                  <textarea type="{{form.as_p.mensagem}}" class="form-control error" name="textomsg" rows="7" id="textoarea"></textarea>
                   <span class="col-lg-12 text-center">* É importante detalhar ao máximo sua necessidade.</span>
                 </div>
               </div>

@@ -3,8 +3,8 @@ from django.db import models
 # Create your models here.
 
 class Pessoa(models.Model):
-	nome = models.CharField(max_length=254)
-	email = models.EmailField(max_length=254)
+	nome = models.CharField(max_length=50)
+	email = models.EmailField(max_length=50)
 	mensagem = models.TextField(max_length=500)
 
 	def __str__(self):
