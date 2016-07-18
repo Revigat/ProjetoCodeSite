@@ -6,7 +6,7 @@
 	>
 <style type="text/css">
 <![CDATA[
-	.st0{fill:#00FFFF;stroke:#FFFFFF;stroke-width:4;stroke-linecap:round;}
+	.st0{fill:none;stroke:#FFFFFF;stroke-width:4;stroke-linecap:round;}
 
 	.plane{animation: spin 0.9s linear;animation-fill-mode:both;animation-delay:0.9s;transform-origin: 50% 100%;}
 
