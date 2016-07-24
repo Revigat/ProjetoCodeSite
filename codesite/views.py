@@ -6,7 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views.decorators.csrf import csrf_exempt
 from codesite.models import Pessoa
-from django.core.mail import send_mail
+from django.core.mail import send_mass_mail
 from .forms import PessoaForm
 
 
@@ -20,12 +20,15 @@ def index(request):
 	if request.method == "POST":
 		form = PessoaForm(request.POST)
 		if form.is_valid():
-			vNome = form.cleaned_data['nome'] #é melhor acessar form.cleaned_data. Estes dados não serão somente válidos, mas estarão convertidos em tipos relevantes do Python
-			vEmail = form.cleaned_data['email']
-			vMensagem = form.cleaned_data['mensagem']
+			v_nome = form.cleaned_data['nome'] #é melhor acessar form.cleaned_data. Estes dados não serão somente válidos, mas estarão convertidos em tipos relevantes do Python
+			v_email = form.cleaned_data['email']
+			v_mensagem = form.cleaned_data['mensagem']
 			form.save()
-			send_mail('Mensagem de Cliente','Nome: %s \nE-mail: %s \nMensagem: %s '%(vNome,vEmail,vMensagem),'revigatcode@gmail.com',['revigat@gmail.com'])
-			send_mail('Code - Inteligência WEB','Agradecemos seu interesse na Code, dentro de 24h entraremos em contato.','revigatcode@gmail.com',['%s'%(vEmail)])
+
+			msg_adm = ('Mensagem de Cliente','Nome: %s \nE-mail: %s \nMensagem: %s '%(v_nome,v_email,v_mensagem),'revigatcode@gmail.com',['revigat@gmail.com'])
+			msg_cliente = ('Code - Inteligência WEB','Agradecemos seu interesse na Code, dentro de 24h entraremos em contato.','revigatcode@gmail.com',['%s'%(v_email)])
+
+			send_mass_mail((msg_adm, msg_cliente), fail_silently=False) #Abre apenas uma conexão com o servidor de email
 
 			return HttpResponseRedirect('index.html')
 

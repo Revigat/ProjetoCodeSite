@@ -6,7 +6,7 @@ class PessoaForm(forms.ModelForm):
 
 	class Meta:
 		
-		model = Pessoa
+		model = Pessoa # qual model vamos usar
 
-		fields = ['nome','email','mensagem']
+		fields = ['nome','email','mensagem'] # nome dos campos do model
 
