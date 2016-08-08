@@ -136,7 +136,7 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 DEFAULT_FROM_EMAIL = 'Code inteligência WEB <revigatcode@gmail.com>'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'revigatcode@gmail.com'  
-EMAIL_HOST_PASSWORD = '@Pro502010'
+EMAIL_HOST_USER = 'email aqui'  
+EMAIL_HOST_PASSWORD = 'senha aqui'
 EMAIL_PORT = 587
 
