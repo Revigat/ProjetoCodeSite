@@ -28,43 +28,19 @@
       <div class="row">
         <div class="col-lg-12 text-center">
           <div>
-          <h2>Soluções<br></br></h2>
+            <h2>Soluções<br></br></h2>
           </div>
           <div class="row">
-            <div class="row">
-              <div class="col-sm-4 portfolio-item text-center">
-                <div class="panel panel-info">
-                  <div class="panel-heading"><h4>WEB</h4></div>
-                  <div class="list-group">
-                    <a href="#" class="list-group-item active">Estratégia para o seu negócio</a>
-                    <a href="#" class="list-group-item">Aplicações Responsivas</a>
-                    <a href="#" class="list-group-item">Desing Focado no UX</a>
-                  </div>
-                  <div class="panel-body"><h6>Desing Inovador</h6></div>
-              </div>
-            </div>
-            <div class="col-sm-4 portfolio-item text-center">  
-              <div class="panel panel-info">
-                <div class="panel-heading"><h4>SEO</h4></div>
-                <div class="list-group">
-                    <a href="#" class="list-group-item active">Você nas Primeiras posições</a>
-                    <a href="#" class="list-group-item">Second item</a>
-                    <a href="#" class="list-group-item">Third item</a>
-                  </div>
-                <div class="panel-body"><h5>Utilizamos Tecnologia Schema</h5></div>
-              </div> 
-            </div>
-            <div class="col-sm-4 portfolio-item text-center">  
-              <div class="panel panel-info">
-                <div class="panel-heading"><h4>CMS</h4></div>
-                <div class="list-group">
-                    <a href="#" class="list-group-item active ">Gerencie seu site</a>
-                    <a href="#" class="list-group-item ">LOL</a>
-                    <a href="#" class="list-group-item">Third item</a>
-                  </div>
-                <div class="panel-body"><h6>Gerenciamento avançado de conteudo</h6></div>
-              </div>  
-          </div>
+            <button type="button" class="btn btn-primary btn-lg btn-success" data-toggle="modal" data-target="#myModal">
+              <h4>WEB</h4>
+            </button>
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+              <h4>SEO</h4>
+            </button>
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+              <h4>CMS</h4>
+            </button>
+          </div> 
         </div>
       </div>  
     </div>
@@ -87,17 +63,10 @@
         <div class="col-lg-12 text-center">
           <h2>Sobre</h2>   
         </div> 
-      </div>
-      <div class="row">
-        <div class="col-lg-4 col-lg-offset-2">
-          <blockquote cite="http://example.com/facts">
-            <p>Somos um empresa focada nos resultados de nossos clientes, acreditamos que soluções simples são extremamente poderosas e que desevolvimento de software é uma arte.</p>
-          </blockquote>
-        </div>  
-        <div class="col-lg-4">
-          <blockquote class="blockquote-reverse" cite="http://example.com/facts">
-            <p>Trabalhar conosco é ter um parceiro estratégico alinhado com seus objetivos, utilizamos tecnologia de ponta para prover soluções inovadoras.</p>
-          </blockquote> 
+        <div class="row">
+          <div class="col-lg-12 col-lg-offset-2">
+            
+          </div>
         </div>
       </div> 
     </div>
@@ -161,42 +130,29 @@
     </div>
   </section>
     <!--Modal-->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Seu negócio para o #Mundo<br></br></h2>
-              
-                            <p>No Brasil são mais de 100 MILHÕES de pessoas conectadas a internet e esse número vem crescendo a cada ano. Se você almeja sucesso nos negócios e deseja conquistar novos clientes um WEB SITE é OBRIGATÓRIO.</p>
-                            <p>Nós da CODE desenvolvemos soluções inovadoras e inteligentes, utilizando da mais alta tecnologia.</p>
-                            <p>Não perca tempo, tempo é #DINHEIRO!</p>
-                           <!-- <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="#contato">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="#">April 2016</a>
-                                    </strong>
-                                </li>
-                                <li>Solução:
-                                    <strong><a href="#">Desenvolvimento web</a>
-                                    </strong>
-                                </li>
-                            </ul>-->
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Desenvolvimento WEB</h4>
+      </div>
+      <div class="modal-body">
+        <div class="jumbotron">
+          <h1 class="display-3">Hello, world!</h1>
+          <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+          <hr class="m-y-2">
+          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+          <p class="lead">
+          </p>
         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
     </div>
+  </div>
+</div>
 {% endblock %}
