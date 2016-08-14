@@ -10,6 +10,7 @@ from django.core.mail import send_mass_mail
 from .forms import PessoaForm
 # Create your views here.
 
+
 @csrf_exempt
 def index(request):
 	p = Pessoa()
@@ -53,6 +54,3 @@ def cadastro(request):
 		return render_to_response('apresenta.html',{'nome': nome , 'email': email})
 
 	return render_to_response('cadastro.html')
-	
-
-
