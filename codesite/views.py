@@ -29,7 +29,7 @@ def index(request):
             # Cria a mensagem para o administrador(CEO)
             msg_adm = ('Mensagem do Cliente', 'Nome: %s \nE-mail: %s \nMensagem: %s ' % (vnome, vemail, vmensagem), 'revigatcode@gmail.com', ['revigat@gmail.com'])
             # Cria a mensagem para o Cliente
-            msg_cliente = ('Code - WEB Solutions', 'Agradecemos seu interesse na Code, dentro de 24h entraremos em contato.', 'revigatcode@gmail.com', ['%s' % (vemail)])
+            msg_cliente = ('Code - WEB Solutions', 'Agradecemos seu Contato e interesse na Code, dentro de 24h entraremos em contato.', 'revigatcode@gmail.com', ['%s' % (vemail)])
             # Abre apenas uma conexão com o servidor de email e evia as duas mensagens
             send_mass_mail((msg_adm, msg_cliente), fail_silently=False)
             # Redireciona para a Index

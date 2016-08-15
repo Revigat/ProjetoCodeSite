@@ -1,12 +1,11 @@
-from django import forms 
+from django import forms
 from .models import Pessoa
 
 
 class PessoaForm(forms.ModelForm):
 
-	class Meta:
-		
-		model = Pessoa # qual model vamos usar
-
-		fields = ['nome','email','mensagem'] # nome dos campos do model
-
+    class Meta:
+        # Qual model vamos usar
+        model = Pessoa
+        # Nome dos campos do model
+        fields = ['nome', 'email', 'mensagem']
