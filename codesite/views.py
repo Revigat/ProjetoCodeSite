@@ -1,5 +1,6 @@
 # -*- coding: UTF-8 -*-
 from __future__ import unicode_literals
+from django.contrib import messages
 from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
@@ -22,12 +23,11 @@ def index(request):
 			v_email = form.cleaned_data['email']
 			v_mensagem = form.cleaned_data['mensagem']
 			form.save()
-
+			messages.success(request, 'Profile details updated.')
 			msg_adm = ('Mensagem de Cliente','Nome: %s \nE-mail: %s \nMensagem: %s '%(v_nome,v_email,v_mensagem),'revigatcode@gmail.com',['revigat@gmail.com'])
 			msg_cliente = ('Code - Inteligência WEB','Agradecemos seu interesse na Code, dentro de 24h entraremos em contato.','revigatcode@gmail.com',['%s'%(v_email)])
 
 			send_mass_mail((msg_adm, msg_cliente), fail_silently=False) #Abre apenas uma conexão com o servidor de email
-
 			return HttpResponseRedirect('index.html')
 	else:
 		form = PessoaForm()
@@ -35,8 +35,8 @@ def index(request):
 
 
 def apresenta(request):
+	p = Pessoa()
 	usuarios = p.objects.all()
-
 	return render_to_response('apresenta.html',{'usuario': usuarios})
 
 	#return HttpResponse('ok')
