@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # My app
     'codesite',
-    'gunicorn', 
+    'gunicorn',
 ]
 
 MIDDLEWARE_CLASSES = [
