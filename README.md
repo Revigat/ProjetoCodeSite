@@ -1,4 +1,5 @@
-# Projeto web site  - CODE
-- Desing em desenvolvimento
+# Web site - CODE
 
-# On line in:  www.pycode.com.br
+- Desing in development
+
+# See here  www.pycode.com.br
