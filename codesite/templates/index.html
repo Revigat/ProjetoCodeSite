@@ -1,176 +1,176 @@
 {% extends "base.html" %}
+
 {% block content %}
-  <!-- Header-->
-  <header>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          {% for message in messages %}
-            <h1{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h1>
-          {% endfor %}
-          <img class="img-responsive" src="static/img/logo.svg">
-          <div class="intro-text ">
-            <span class="name">code</span>
-            <span class="skills">Tecnologia Gerando Resultados</span>
-            <!--<ul class="list-inline">
-              <li class="animated infinite bounceInDown">
-                <a href="https://www.facebook.com/codeoficial/" class="btn-social btn-outline shake-opacity"><i class="fa fa-fw fa-facebook"></i></a>
-              </li>
-            </ul>-->
-          </div>   
-        </div>  
+<!-- Header-->
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        {% for message in messages %}
+          <h1{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h1>
+        {% endfor %}
+        <img class="img-responsive" src="static/img/logo.svg">
+        <div class="intro-text ">
+          <span class="name">code</span>
+          <span class="skills">Tecnologia Gerando Resultados</span>
+          <!--<ul class="list-inline">
+            <li class="animated infinite bounceInDown">
+              <a href="https://www.facebook.com/codeoficial/" class="btn-social btn-outline shake-opacity"><i class="fa fa-fw fa-facebook"></i></a>
+            </li>
+          </ul>-->
+        </div>   
       </div>  
-    </div>
-  </header>
-
-  <section id="servicos">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <div>
-            <h2 class="wow fadeInDown" data-wow-duration="300ms" data-wow-delay="300ms">Soluções<br></br></h2> 
-          </div>
-          <div class="row">
-            <div class="col-md-6 wow fadeInLeftBig" data-wow-duration="600ms" data-wow-delay="600ms">
-              <div class="thumbnail material-card">
-                 <header class="material-card__header">
-                  <img src="static/img/web.png" class="material-card__img" alt="Thumbnail label"/>
-                 </header>
-                 <div class="material-card__content">
-                  <h3 class="material-card__title">WEB Solutions</h3>
-                  <p>Soluções Locais, Padrões Globais</p>
-                 </div>
-                 <footer class="material-card__footer">
-                  <a class="btn material-btn material-btn_primary" data-toggle="modal" data-target="#myModal">Saiba mais</a>
-                 </footer>
-                </div>
-            </div>
-            <div class="col-md-6 wow fadeInRightBig" data-wow-duration="600ms" data-wow-delay="600ms">
-              <div class="thumbnail material-card">
-                 <header class="material-card__header">
-                  <img src="static/img/cms.png" class="material-card__img" alt="Thumbnail label"/>
-                 </header>
-                 <div class="material-card__content">
-                  <h3 class="material-card__title">Content management</h3>
-                  <p>Você no controle</p>
-                 </div>
-                 <footer class="material-card__footer">
-                  <a href="#0" class="btn material-btn material-btn_primary disabled">Em breve</a>
-                 </footer>
-                </div>
-            </div>
-          </div> 
-        </div>
-      </div>  
-    </div>
-  </section>
-
-  <section id="clientes" class="success">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2>Clientes</h2>
-          <!--<h3 class="shake-slow shake-constant shake-constant--hover">Você pode ser o Primeiro</h3>-->
-        </div>      
-      </div>  
-    </div>
-  </section>
-  
-  <section id="sobre">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2>Sobre</h2>   
-        </div> 
-        <div class="row" >
-          <div class="col-lg-6 text-center ">
-            <div class="container
-            ">
-              <div class="panel panel-default material-panel">
-                <h5 class="panel-heading material-panel__heading"><p></p></h5>
-                <div class="panel-body material-panel__body">
-                  <p>Somos uma empresa de desenvolvimento web, apaixonada pelo que faz.</p>
-                  <p>Nosso profissionalismo deve exceder o inovador e o responsável.</p>
-                  <p>Nossa missão é viabilizar soluções inovadoras e de excelência.</p>
-                  <img class="material-card__img" src="static/img/logo2.svg" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> 
-    </div>
-  </section>
-
-  <section id="contato" class="success">
-    <div class="container">
-      <div class="row"> 
+    </div>  
+  </div>
+</header>
+<!--Soluçoes-->
+<section id="servicos">
+  <div class="container">
+    <div class="row">
       <div class="col-lg-12 text-center">
-        <h2>Contato</h2>  
-      </div>
-        <div class="col-lg-8 col-lg-offset-2">
-          <form method="POST" action="." class="form-horizontal" name="dados" onsubmit="return enviardados();">
-            <legend class="text-center">Agora que você já nos conhece, conte um pouco sobre o seu Projeto</legend> 
-
-            <div class="row control-group">
-              <div class="form-group col-lg-12 controls">
-                <label class="col-lg-2 control-label error">Seu Nome</label> 
-                <div class="col-lg-10">
-                  <input type="{{form.asp_p.nome}}" class="form-control" name="nome" id="name"> 
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="row control-group">
-              <div class="form-group col-lg-12 controls">
-                <label for="id_email" class="col-lg-2 control-label">Seu Email</label> 
-                <div class="col-lg-10">
-                  <input type="{{form.as_p.email}}" class="form-control error" name="email" id="email"> 
-                  <p class="help-block text-danger"></p> 
-                </div>
-              </div>
-            </div>
-
-            <div class="row control-group">
-              <div class="form-group col-lg-12 controls">
-                  {{form.mensagem.errors}}
-                <label for="id_mensagem" class="col-lg-2 control-label">Mensagem</label>
-                <div class="col-lg-10">
-                  <textarea type="{{form.as_p.mensagem}}" class="form-control error" placeholder="Fale sobre o seu negócio, &nbsp; quais são seus objetivos? &nbsp; qual é a sua necessidade?" name="mensagem" rows="7" id="textoarea"></textarea>
-                  <span class="col-lg-12 text-center">* É importante detalhar ao máximo sua necessidade.</span>
-                </div>
-              </div>
-            </div>
-            <div id="success"></div>
-            <div class="alert alert-dismissible alert-success">
-              <button type="button" class="close" data-dismiss="alert">&times;</button>
-              <div class="media material-media">
-                 <div class="media-left">
-                  <a href="#0"><img class="media-object material-media__object"  alt="avatar" src="static/img/avatar.jpg"/></a>
-                 </div>
-                 <div class="media-body">
-                  <h6 class="media-heading material-media__title">Parceria de sucesso !</h6>
-                  <h9>Juntos iremos encarar este desafio, conte com a gente.</h9><p></p>
-                  <h7>Filippe Revigat - Chief Executive Officer</h7>
-                 </div>
-                </div></a>
-            </div>
-            <div class="form-group">
-              <div class="alert alert-dismissible alert-sucess">
-                <div class="col-lg-10 col-lg-offset-2">
-                  <button type="submmit" class="btn material-btn material-btn_lg ">Enviar</button> 
-                </div>
-              </div>
-            </div>
-          </form>
+        <div>
+          <h2 class="wow fadeInDown" data-wow-duration="300ms" data-wow-delay="300ms">Soluções<br></br></h2> 
         </div>
-      </div>  
+        <div class="row">
+          <div class="col-md-6 wow fadeInLeftBig" data-wow-duration="600ms" data-wow-delay="600ms">
+            <div class="thumbnail material-card">
+               <header class="material-card__header">
+                <img src="static/img/web.png" class="material-card__img" alt="Thumbnail label"/>
+               </header>
+               <div class="material-card__content">
+                <h3 class="material-card__title">WEB Solutions</h3>
+                <p>Soluções Locais, Padrões Globais</p>
+               </div>
+               <footer class="material-card__footer">
+                <a class="btn material-btn material-btn_primary" data-toggle="modal" data-target="#myModal">Saiba mais</a>
+               </footer>
+              </div>
+          </div>
+          <div class="col-md-6 wow fadeInRightBig" data-wow-duration="600ms" data-wow-delay="600ms">
+            <div class="thumbnail material-card">
+               <header class="material-card__header">
+                <img src="static/img/cms.png" class="material-card__img" alt="Thumbnail label"/>
+               </header>
+               <div class="material-card__content">
+                <h3 class="material-card__title">Content management</h3>
+                <p>Você no controle</p>
+               </div>
+               <footer class="material-card__footer">
+                <a href="#0" class="btn material-btn material-btn_primary disabled">Em breve</a>
+               </footer>
+              </div>
+          </div>
+        </div> 
+      </div>
+    </div>  
+  </div>
+</section>
+<!--Clientes-->
+<section id="clientes" class="success">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2>Clientes</h2>
+      </div>      
+    </div>  
+  </div>
+</section>
+<!--Sobre--> 
+<section id="sobre">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2>Sobre</h2>   
+      </div> 
+      <div class="row" >
+        <div class="col-lg-6 text-center ">
+          <div class="container
+          ">
+            <div class="panel panel-default material-panel">
+              <h5 class="panel-heading material-panel__heading"><p></p></h5>
+              <div class="panel-body material-panel__body">
+                <p>Somos uma empresa de desenvolvimento web, apaixonada pelo que faz.</p>
+                <p>Nosso profissionalismo deve exceder o inovador e o responsável.</p>
+                <p>Nossa missão é viabilizar soluções inovadoras e de excelência.</p>
+                <img class="material-card__img" src="static/img/logo2.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+</section>
+<!--Contato-->
+<section id="contato" class="success">
+  <div class="container">
+    <div class="row"> 
+    <div class="col-lg-12 text-center">
+      <h2>Contato</h2>  
     </div>
-  </section>
-    <!--Modal-->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog text-center" role="document">
+      <div class="col-lg-8 col-lg-offset-2">
+        <form method="POST" action="." class="form-horizontal" name="dados" onsubmit="return enviardados();">
+          <legend class="text-center">Agora que você já nos conhece, conte um pouco sobre o seu Projeto</legend> 
+
+          <div class="row control-group">
+            <div class="form-group col-lg-12 controls">
+              <label class="col-lg-2 control-label error">Seu Nome</label> 
+              <div class="col-lg-10">
+                <input type="{{form.asp_p.nome}}" class="form-control" name="nome" id="name"> 
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row control-group">
+            <div class="form-group col-lg-12 controls">
+              <label for="id_email" class="col-lg-2 control-label">Seu Email</label> 
+              <div class="col-lg-10">
+                <input type="{{form.as_p.email}}" class="form-control error" name="email" id="email"> 
+                <p class="help-block text-danger"></p> 
+              </div>
+            </div>
+          </div>
+
+          <div class="row control-group">
+            <div class="form-group col-lg-12 controls">
+                {{form.mensagem.errors}}
+              <label for="id_mensagem" class="col-lg-2 control-label">Mensagem</label>
+              <div class="col-lg-10">
+                <textarea type="{{form.as_p.mensagem}}" class="form-control error" placeholder="Fale sobre o seu negócio, &nbsp; quais são seus objetivos? &nbsp; qual é a sua necessidade?" name="mensagem" rows="7" id="textoarea"></textarea>
+                <span class="col-lg-12 text-center">* É importante detalhar ao máximo sua necessidade.</span>
+              </div>
+            </div>
+          </div>
+          <div id="success"></div>
+          <div class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <div class="media material-media">
+               <div class="media-left">
+                <a href="#0"><img class="media-object material-media__object"  alt="avatar" src="static/img/avatar.jpg"/></a>
+               </div>
+               <div class="media-body">
+                <h6 class="media-heading material-media__title">Parceria de sucesso !</h6>
+                <h9>Juntos iremos encarar este desafio, conte com a gente.</h9><p></p>
+                <h7>Filippe Revigat - Chief Executive Officer</h7>
+               </div>
+              </div></a>
+          </div>
+          <div class="form-group">
+            <div class="alert alert-dismissible alert-sucess">
+              <div class="col-lg-10 col-lg-offset-2">
+                <button type="submmit" class="btn material-btn material-btn_lg ">Enviar</button> 
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>  
+  </div>
+</section>
+<!--Modal-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog text-center" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
