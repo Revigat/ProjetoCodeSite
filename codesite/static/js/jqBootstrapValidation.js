@@ -182,7 +182,7 @@
             // ---------------------------------------------------------
             //                                                     EMAIL
             // ---------------------------------------------------------
-            if ($this.attr("type") !== undefined && $this.attr("type").toLowerCase() === "email") {
+            if ($this.attr("type") !== undefined && $this.attr("type").toLowerCase() === "{{form.as_p.email}}") {
               message = "Not a valid email address<!-- data-validator-validemail-message to override -->";
               if ($this.data("validationValidemailMessage")) {
                 message = $this.data("validationValidemailMessage");

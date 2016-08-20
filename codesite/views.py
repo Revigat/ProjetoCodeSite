@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 from django.contrib import messages
 from django.shortcuts import render_to_response
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from codesite.models import Pessoa
 from django.core.mail import send_mass_mail
@@ -33,6 +33,8 @@ def index(request):
             # Abre apenas uma conexão com o servidor de email e evia as duas mensagens
             send_mass_mail((msg_adm, msg_cliente), fail_silently=False)
             # Redireciona para a Index
+            return HttpResponseRedirect('index.html')
+        else:
             return HttpResponseRedirect('index.html')
     else:
         # Se for GET, istancia o Formulário
