@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="422px" height="259.334px" viewBox="0 0 422 259.334" style="enable-background:new 0 0 422 259.334;" xml:space="preserve"
+	>
+<style type="text/css">
+<![CDATA[
+	.st0{fill:none;stroke:#FFFFFF;stroke-width:4;stroke-linecap:round;}
+
+	.plane{animation: spin 0.9s linear;animation-fill-mode:both;animation-delay:0.9s;transform-origin: 50% 100%;}
+
+
+@keyframes spin {
+  0% {
+    transform: scale(2.1);
+    opacity: 100;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes mudar{
+
+  from{
+    fill:#00FF00
+
+  }
+  to{
+    fill:#00FFFF
+  }
+}
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 3s linear forwards; animation-delay:4s;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.path1 {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 4s linear forwards; animation-delay:1s;
+}
+
+.path2 {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 4s linear forwards; animation-delay:2s;
+}
+
+.path3 {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 4s linear forwards; animation-delay:3s;
+}
+
+]]>
+</style>
+<g>
+	<path class="st0 path" d="M205.171,67.48c0.585,10.727,2.809,50.695,2.875,52.333c2.729,31.282,12.083,64.791,46.467,64.791
+		c33.523,0,47.479-29.378,53.316-52.077c3.676-14.113,6.006-26.276,6.006-26.276l-22.52,125.445c0,0-2.974,21.611-21.208,22.062
+		c0,0-53.099,2.041-55.205,0c-2.023-2.009-5.146-16.987-7.479-16.987c-2.337,0-5.073,14.662-7.406,16.987
+		c-2.42,2.355-56.609,0-56.609,0c-18.628,0-21.671-21.591-21.671-21.591L97.182,106.251c0,0,2.339,12.164,5.996,26.276
+		c5.85,22.699,19.887,52.077,53.34,52.077c34.45,0,43.725-33.509,46.461-64.791c0.142-1.636,1.509-41.504,1.938-52.294"/>
+	<g>
+		<path class="st0 path3" d="M104.566,96.778c0,5.461-4.367,9.829-9.819,9.829c-5.383,0-9.75-4.368-9.75-9.829
+			c0-5.382,4.367-9.828,9.75-9.828C100.2,86.95,104.566,91.396,104.566,96.778z"/>
+		<path class="st0 path2" d="M325.667,96.617c0,5.46-4.356,9.827-9.816,9.827c-5.395,0-9.751-4.367-9.751-9.827
+			c0-5.382,4.356-9.825,9.751-9.825C321.31,86.792,325.667,91.235,325.667,96.617z"/>
+		<path class="st0 path1" d="M218.293,54.248c0,7.321-5.936,13.25-13.25,13.25l0,0c-7.319,0-13.249-5.929-13.249-13.25l0,0
+			c0-7.314,5.93-13.248,13.249-13.248l0,0C212.358,41,218.293,46.933,218.293,54.248L218.293,54.248z"/>
+	</g>
+</g>
+</svg>
