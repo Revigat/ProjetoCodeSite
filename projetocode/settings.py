@@ -27,9 +27,7 @@ SECRET_KEY = '+e1j61gcgj9n_$98s)rl&m$thxd$stdh+23-j*!9f*bbt5*evj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [".pycode.com.br"]
-
-ADMINS = (('Filippe Revigat', 'revigat@gmail.com'),)
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -128,9 +126,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
 
 
 # Simplified static file serving.
