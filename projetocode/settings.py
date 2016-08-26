@@ -29,6 +29,10 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['.pycode.com.br']
 
+ADMINS = (
+    ('Filippe Revigat', 'revigat@gmail.com'),
+)
+
 
 # Application definition
 
