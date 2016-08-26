@@ -37,7 +37,7 @@ def index(request):
                 raise Http404
 
             # Redireciona para a Index
-            messages.success(request, '%s, mensagem enviada com sucesso !' % vnome)
+            messages.success(request, '%s, mensagem enviada com sucesso !' % vnome.title())
             return render(request, 'index.html')
         else:
             messages.success(request, 'Ops! O formulário foi preenchido incorretamente')
