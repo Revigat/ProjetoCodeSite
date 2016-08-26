@@ -3,12 +3,23 @@
 {% block content %}
 <!-- Header-->
 <header>
+  <!--Mensagem-->
   <div class="container">
     <div class="row">
+      <div class="col-sm-4">
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-dismissible alert-success wow fadeInLeftBig" data-wow-duration="600ms" data-wow-delay="500ms"">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}  
+      </div>
+    </div>
+  <!--Fim mensagem-->
+    <div class="row">
       <div class="col-lg-12">
-        {% for message in messages %}
-          <h1{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h1>
-        {% endfor %}
         <img class="img-responsive" src="static/img/logo.svg">
         <div class="intro-text ">
           <span class="name">code</span>
@@ -134,7 +145,6 @@
 
           <div class="row control-group">
             <div class="form-group col-lg-12 controls">
-                {{form.mensagem.errors}}
               <label for="id_mensagem" class="col-lg-2 control-label">Mensagem</label>
               <div class="col-lg-10">
                 <textarea type="{{form.as_p.mensagem}}" class="form-control error" placeholder="Fale sobre o seu negócio, &nbsp; quais são seus objetivos? &nbsp; qual é a sua necessidade?" name="mensagem" rows="7" id="textoarea"></textarea>

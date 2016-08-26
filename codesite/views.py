@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 from __future__ import unicode_literals
 from django.contrib import messages
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from codesite.models import Pessoa
@@ -25,7 +25,6 @@ def index(request):
             vmensagem = form.cleaned_data['mensagem']
             # Metodo para salvar no banco de dados
             form.save()
-            messages.success(request, 'Profile details updated.')
             # Cria a mensagem para o administrador(CEO)
             msg_adm = ('Mensagem do Cliente', 'Nome: %s \nE-mail: %s \nMensagem: %s ' % (vnome, vemail, vmensagem), 'revigatcode@gmail.com', ['revigat@gmail.com'])
             # Cria a mensagem para o Cliente
@@ -33,9 +32,11 @@ def index(request):
             # Abre apenas uma conexão com o servidor de email e evia as duas mensagens
             send_mass_mail((msg_adm, msg_cliente), fail_silently=False)
             # Redireciona para a Index
-            return HttpResponseRedirect('index.html')
+            messages.success(request, '%s, mensagem enviada com sucesso !' %vnome)
+            return render(request, 'index.html')
         else:
-            return HttpResponseRedirect('index.html')
+            messages.success(request, 'Ops! O formulário foi preenchido incorretamente')
+            return render(request, 'index.html')
     else:
         # Se for GET, istancia o Formulário
         form = PessoaForm()
