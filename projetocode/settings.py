@@ -27,7 +27,7 @@ SECRET_KEY = '+e1j61gcgj9n_$98s)rl&m$thxd$stdh+23-j*!9f*bbt5*evj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.pycode.com.br']
 
 
 # Application definition
