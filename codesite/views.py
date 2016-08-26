@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 from django.contrib import messages
 from django.shortcuts import render_to_response, render
+from django.http import Http404
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from codesite.models import Pessoa
@@ -30,9 +31,13 @@ def index(request):
             # Cria a mensagem para o Cliente
             msg_cliente = ('Code - WEB Solutions', 'Agradecemos seu Contato e interesse na Code, dentro de 24h entraremos em contato.', 'revigatcode@gmail.com', ['%s' % (vemail)])
             # Abre apenas uma conexão com o servidor de email e evia as duas mensagens
-            send_mass_mail((msg_adm, msg_cliente), fail_silently=False)
+            try:
+                send_mass_mail((msg_adm, msg_cliente), fail_silently=False)
+            except:
+                raise Http404
+
             # Redireciona para a Index
-            messages.success(request, '%s, mensagem enviada com sucesso !' %vnome)
+            messages.success(request, '%s, mensagem enviada com sucesso !' % vnome)
             return render(request, 'index.html')
         else:
             messages.success(request, 'Ops! O formulário foi preenchido incorretamente')
